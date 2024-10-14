@@ -7,64 +7,96 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #f7f7f7;
             color: #333;
+            margin: 0;
+            padding: 0;
             text-align: center;
         }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            background-color: #fff;
+        .header {
+            background-color: #4CAF50;
+            color: white;
             padding: 20px;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            width: 80%;
+            max-width: 600px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        input, select {
+        h1 {
+            color: #4CAF50;
+        }
+        input, select, button {
+            width: 100%;
             padding: 10px;
             margin: 10px 0;
-            width: 100%;
-            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
         }
         button {
-            padding: 10px 20px;
-            background-color: #28a745;
+            background-color: #4CAF50;
             color: white;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
         }
         button:hover {
-            background-color: #218838;
+            background-color: #45a049;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            color: #333;
         }
     </style>
 </head>
 <body>
+    <div class="header">
+        <h1>Bestil din græsslåning nemt og hurtigt</h1>
+    </div>
+
     <div class="container">
-        <h1>Bestil græsslåning</h1>
         <form action="/submit-booking" method="post">
-            <label for="name">Dit navn:</label><br>
-            <input type="text" id="name" name="name" required><br>
+            <h2>Bestil græsslåning</h2>
+            
+            <label for="name">Dit navn:</label>
+            <input type="text" id="name" name="name" placeholder="Indtast dit navn" required>
+            
+            <label for="email">Din e-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Indtast din e-mail" required>
 
-            <label for="email">Din e-mail:</label><br>
-            <input type="email" id="email" name="email" required><br>
+            <label for="address">Adresse:</label>
+            <input type="text" id="address" name="address" placeholder="Indtast din adresse" required>
 
-            <label for="plænestørrelse">Vælg plænestørrelse:</label><br>
+            <label for="plænestørrelse">Vælg plænestørrelse:</label>
             <select id="plænestørrelse" name="plænestørrelse" required>
                 <option value="small">Op til 100 m²</option>
                 <option value="medium">100 - 500 m²</option>
                 <option value="large">500 - 1000 m²</option>
                 <option value="x-large">Over 1000 m²</option>
-            </select><br>
+            </select>
 
-            <label for="variant">Vælg klippevariant:</label><br>
+            <label for="variant">Vælg klippevariant:</label>
             <select id="variant" name="variant" required>
                 <option value="basic">Basis klipning</option>
                 <option value="trim">Trimning af kanter</option>
                 <option value="full">Komplet service (inkl. trimning af kanter og fjernelse af affald)</option>
-            </select><br>
+            </select>
+
+            <label for="date">Ønsket dato for klipning:</label>
+            <input type="date" id="date" name="date" required>
 
             <button type="submit">Bestil nu</button>
         </form>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Græsslåning Tjeneste. Alle rettigheder forbeholdes.</p>
+    </footer>
 </body>
 </html>
